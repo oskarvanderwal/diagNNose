@@ -313,8 +313,8 @@ class SyntaxEvalTask:
                 activations, counter_activations, token_ids
             )
 
-        scores_df["scores"] = scores.detach()
-        scores_df["counter_scores"] = counter_scores.detach()
+        scores_df["scores"] = scores.detach().cpu()
+        scores_df["counter_scores"] = counter_scores.detach().cpu()
 
         return scores_df
 
